@@ -30,7 +30,7 @@ class ResultsController extends Controller
             ];
 
             Aspirante::create([
-                'name' => $request->person['name'],
+                'name' => $request->person['name'] . " " . $request->person['lastname'],
                 'email' => $request->person['email'],
                 'results' => json_encode($count)
             ]);
