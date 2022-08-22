@@ -16,26 +16,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
 Route::group([
 
-  'middleware' => ['api']
+    'middleware' => ['api']
 
 ], function ($router) {
-  Route::post('login', 'App\Http\Controllers\AuthController@login');
-  Route::post('signup', 'App\Http\Controllers\AuthController@signup');
-  Route::post('calculate', ResultsController::class);
+    Route::post('login', 'App\Http\Controllers\AuthController@login');
+    Route::post('signup', 'App\Http\Controllers\AuthController@signup');
+    Route::post('calculate', ResultsController::class);
+    Route::get('aspirante', 'App\Http\Controllers\AspiranteController@index');
+    Route::get('exportar', 'App\Http\Controllers\AspiranteController@export');
 });
 
 
-
 Route::group([
 
-  'middleware' => ['auth:api']
+    'middleware' => ['auth:api', 'cors']
 
 ], function ($router) {
 
-  Route::post('logout', 'App\Http\Controllers\AuthController@logout');
-  Route::post('refresh', 'App\Http\Controllers\AuthController@refresh');
-  Route::get('me', 'App\Http\Controllers\AuthController@me');
+    Route::post('logout', 'App\Http\Controllers\AuthController@logout');
+    Route::post('refresh', 'App\Http\Controllers\AuthController@refresh');
+    Route::get('me', 'App\Http\Controllers\AuthController@me');
 });
