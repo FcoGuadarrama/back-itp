@@ -22,21 +22,22 @@ class ResultsController extends Controller
             arsort($count);
 
             $arrayDeCossas = [
-                1 => 'arte y creatividad',
-                2 => 'ciencias sociales',
-                3 => 'economica administrativa y financiera',
-                4 => 'ciencia y tecnologia',
+                1 => 'Arte y Creatividad',
+                2 => 'Ciencias Sociales',
+                3 => 'Economica Administrativa y Financiera',
+                4 => 'Ciencia y Tecnologia',
                 5 => 'Ciencias ecologicas, biologicas y de salud'
             ];
 
             Aspirante::create([
                 'name' => $request->person['name'] . " " . $request->person['lastname'],
                 'email' => $request->person['email'],
-                'results' => json_encode($count)
+                'results' => $arrayDeCossas[array_key_first($count)]
             ]);
 
             $arrayDeRegreso = [
                 'count' => $count,
+                'area_id' => array_key_first($count),
                 'result' => $arrayDeCossas[array_key_first($count)]
             ];
         }
