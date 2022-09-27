@@ -11,6 +11,6 @@ class Aspirante extends Model
 
     protected $table = "aspirantes";
 
-    protected $fillable = ['name', 'email', 'results'];
+    protected $fillable = ['name', 'email', 'area_id', 'results'];
 
 }

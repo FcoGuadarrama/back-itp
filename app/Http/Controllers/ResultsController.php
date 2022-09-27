@@ -32,6 +32,7 @@ class ResultsController extends Controller
             Aspirante::create([
                 'name' => $request->person['name'] . " " . $request->person['lastname'],
                 'email' => $request->person['email'],
+                'area_id' => array_key_first($count),
                 'results' => $arrayDeCossas[array_key_first($count)]
             ]);
 
