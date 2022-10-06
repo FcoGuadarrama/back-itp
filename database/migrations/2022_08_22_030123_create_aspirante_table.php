@@ -17,6 +17,10 @@ class CreateAspiranteTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->string('age');
+            $table->string('option');
+            $table->string('interestedCareer');
+            $table->string('originSchool');
             $table->string('results');
             $table->timestamps();
         });

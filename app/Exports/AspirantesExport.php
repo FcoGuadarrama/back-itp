@@ -2,27 +2,16 @@
 
 namespace App\Exports;
 
-use Illuminate\Support\Facades\DB;
-use Maatwebsite\Excel\Concerns\FromCollection;
-use Maatwebsite\Excel\Concerns\WithHeadings;
+use App\Models\Aspirante;
+use Maatwebsite\Excel\Concerns\FromView;
+use Illuminate\Contracts\View\View;
 
-class AspirantesExport implements FromCollection, WithHeadings
+class AspirantesExport implements FromView
 {
-    /**
-     * @return \Illuminate\Support\Collection
-     */
-    public function headings(): array
-    {
-        return [
-            'Id',
-            'Nombre',
-            'Email',
-            'Resultados'
-        ];
-    }
-
-    public function collection()
-    {
-        return DB::table('aspirantes')->select('id', 'name', 'email', 'results')->get();
-    }
+  public function view(): View
+  {
+    return view('exports.aspirantes', [
+      'aspirantes' => Aspirante::all()
+    ]);
+  }
 }
