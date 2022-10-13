@@ -11,6 +11,16 @@ class Aspirante extends Model
 
     protected $table = "aspirantes";
 
-    protected $fillable = ['name', 'email', 'age', 'interestedCareer', 'originSchool', 'option', 'area_id', 'results'];
+    protected $fillable = [
+      'name',
+      'email',
+      'age',
+      'interestedCareer',
+      'originSchool',
+      'option',
+      'area_id',
+      'college_area',
+      'results'
+    ];
 
 }

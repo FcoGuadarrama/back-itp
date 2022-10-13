@@ -37,6 +37,7 @@ class ResultsController extends Controller
                 'originSchool' => $request->person['originSchool'],
                 'age' => $request->person['age'],
                 'area_id' => array_key_first($count),
+                'college_area' => $request->person['college_area'],
                 'results' => $arrayDeCossas[array_key_first($count)]
             ]);
 

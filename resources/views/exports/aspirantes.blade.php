@@ -9,6 +9,7 @@
         <th>Email</th>
         <th>¿Ha realizado alguna prueba vocacional?</th>
         <th>Carrera de interés</th>
+        <th>Área del Bachillerato</th>
         <th>Resultados</th>
         <th>Fecha</th>
     </tr>
@@ -23,6 +24,7 @@
             <td>{{ $aspirante->email }}</td>
             <td>{{ $aspirante->option }}</td>
             <td>{{ $aspirante->interestedCareer }}</td>
+            <td>{{ $aspirante->college_area }}</td>
             <td>{{ $aspirante->results }}</td>
             <td>{{ \Carbon\Carbon::parse($aspirante->created_at)->format('d-m-y') }}</td>
         </tr>
